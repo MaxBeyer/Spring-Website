@@ -26,10 +26,6 @@ public class RssController {
     	ArrayList<Episode> episodes = new ArrayList<>();
     	FeedReader feedReader = new FeedReader();
     	episodes = feedReader.parseRssXmlIntoEpisodes();
-//        model.addAttribute("episodeTitle", episodes.get(4).get("title"));
-//        model.addAttribute("episodeDate", episodes.get(4).get("publishedDate"));
-//        model.addAttribute("episodeDescription", episodes.get(4).get("description"));
-//        model.addAttribute("episodeAudio", episodes.get(4).get("url"));
         model.addAttribute("episodes", episodes);
         return "rss";
     }

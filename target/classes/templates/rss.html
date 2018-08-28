@@ -118,19 +118,27 @@
             </div>
         </header>
 
-  <div class='container first-element'>
-    <div class="col-xs-12 row well well-lg" th:each="episode ${episodes}">
-      <h3 th:text=${episodeTitle}></h3>
-      	<p><i th:text=${episodeDate}></i></p>
-      	<p th:text=${episodeDescription}></p>
-      	<audio controls="controls" th:src="${episodeAudio}">
-        	Whoopsie Doopsie, an error occured!
-      	</audio>
-      <hr class="darker">
-    </div>
-  </div>
+	<div class='container first-element'>
+		<div class="col-xs-12 row well well-lg">
+			<div th:each="episode: ${episodes}">
 
-  <!-- Footer -->
+				<h3 th:text=${episode.title}></h3>
+				<p>
+					<i th:text=${episode.date}></i>
+				</p>
+				<p th:text=${episode.description}></p>
+				<audio controls="controls" th:src="${episode.audioUrl}">
+					Whoopsie Doopsie, an error occured!
+				</audio>
+				<!-- IF NOT FIRST EPISODE -->
+				<div th:if="${episode.title != 'Episode 1'}">
+					<hr class="darker">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
   <footer>
       <div class="container">
           <div class="row">

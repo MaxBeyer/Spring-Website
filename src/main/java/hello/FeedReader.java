@@ -27,12 +27,6 @@ public class FeedReader {
                 	episode.setDate(entry.getPublishedDate().toString());
                 	episode.setDescription(entry.getDescription().getValue());
                 	episode.setAudioUrl(entry.getEnclosures().get(0).getUrl());
-                	
-//                	HashMap<String, String> episode = new HashMap<String, String>();
-//                	episode.put("title", entry.getTitle());
-//                	episode.put("publishedDate", entry.getPublishedDate().toString());
-//                	episode.put("description", entry.getDescription().getValue());
-//                	episode.put("url", entry.getEnclosures().get(0).getUrl());
                 	episodes.add(episode);
                 	
                     System.out.println(entry.getTitle());

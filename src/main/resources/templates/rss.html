@@ -119,8 +119,14 @@
         </header>
 
   <div class='container first-element'>
-    <div class="col-xs-12 row well well-lg">
-      <h3 th:text="'Hello, ' + ${name} + '!'" /></h3>
+    <div class="col-xs-12 row well well-lg" th:each="episode ${episodes}">
+      <h3 th:text=${episodeTitle}></h3>
+      	<p><i th:text=${episodeDate}></i></p>
+      	<p th:text=${episodeDescription}></p>
+      	<audio controls="controls" th:src="${episodeAudio}">
+        	Whoopsie Doopsie, an error occured!
+      	</audio>
+      <hr class="darker">
     </div>
   </div>
 

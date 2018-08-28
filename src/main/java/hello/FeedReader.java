@@ -25,7 +25,11 @@ public class FeedReader {
                 	Episode episode = new Episode();
                 	episode.setTitle(entry.getTitle());
                 	episode.setDate(entry.getPublishedDate().toString());
-                	episode.setDescription(entry.getDescription().getValue());
+                	//unbold text in description
+                	String description= entry.getDescription().getValue();
+                	description = description.replace("<strong>", "");
+                	description = description.replace("</strong>", "");
+                	episode.setDescription(description);
                 	episode.setAudioUrl(entry.getEnclosures().get(0).getUrl());
                 	episodes.add(episode);
                 	

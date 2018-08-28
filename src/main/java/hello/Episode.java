@@ -22,8 +22,8 @@ public class Episode {
 	public String getDescription() {
 		return description;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescription(String string) {
+		this.description = string;
 	}
 	public String getAudioUrl() {
 		return audioUrl;

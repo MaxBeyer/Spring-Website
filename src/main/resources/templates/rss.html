@@ -126,7 +126,7 @@
 				<p>
 					<i th:text=${episode.date}></i>
 				</p>
-				<p th:text=${episode.description}></p>
+				<p th:utext=${episode.description}></p>
 				<audio controls="controls" th:src="${episode.audioUrl}">
 					Whoopsie Doopsie, an error occured!
 				</audio>
